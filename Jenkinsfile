@@ -1,19 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Bui1d') {
+    stage('Build') { // corrected the spelling
       steps {
-      build 'PES2UG21CS484-1'
-      sh 'g++ W.cpp -o output'
+        build 'PES2UG21CS484-1'
+        sh 'g++ W.cpp -o output'
       }
     }
     stage('Test') {
       steps {
         sh './output'
-        
       }
     }
-    stage( 'Deploy') {
+    stage('Deploy') { // corrected the spacing and typo
       steps {
         echo 'deploy'
       }
@@ -22,6 +21,6 @@ pipeline {
   post {
     failure {
       echo 'pipeline failed'
-    }
-  }
+    }
+  }
 }
