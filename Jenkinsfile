@@ -1,17 +1,15 @@
-
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Bui1d') {
       steps {
       build 'PES2UG21CS484-1'
-      sh 'g++ w.cpp -o output'
+      sh 'g++ main.cpp -o output'
       }
     }
     stage('Test') {
       steps {
         sh './output'
-        
       }
     }
     stage( 'Deploy') {
